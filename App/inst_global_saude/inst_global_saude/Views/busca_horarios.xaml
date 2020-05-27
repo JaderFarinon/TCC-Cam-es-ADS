@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="inst_global_saude.Views.busca_horarios"
+             BackgroundImage="bg.png">
+    <ContentPage.Content>
+        <StackLayout Padding="10"
+                     Margin="10,20,10,10"> 
+            <Label  Text="Busca de Horários"
+                    TextColor="White"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Start"
+                    FontSize="30"
+                    FontAttributes="Bold"/>
+             
+            <Entry  Keyboard="Default"
+                    IsPassword="false"
+                    Placeholder="Parceiro"
+                    WidthRequest="180"
+                    PlaceholderColor="Gray"
+                    BackgroundColor="White"
+                    x:Name="txtParceiro">
+            </Entry>
+            <Entry  Keyboard="Default"
+                    IsPassword="false"
+                    Placeholder="Localidade"
+                    WidthRequest="180"
+                    PlaceholderColor="Gray"
+                    BackgroundColor="White"
+                    x:Name="txtLocalidade">
+            </Entry>
+            <DatePicker  WidthRequest="180"
+                         BackgroundColor="White"
+                         x:Name="pickerNasc">
+            </DatePicker>
+            <Label Text="Lista de horários disponíveis"
+                   FontAttributes="Bold"
+                   VerticalOptions="Start"/>
+            <!--CollectionView Challenge-->
+            <ListView 
+                    x:Name="listaHor" 
+                    Margin="10,0,0,0"
+                    BackgroundColor="Black"
+                    Opacity="0.5">
+            </ListView>
+            <Button
+                x:Name="btn_conf_agenda"
+                BackgroundColor="Blue"
+                BorderRadius="15"
+                Command="{Binding LoginCommand}"
+                HeightRequest="46"
+                HorizontalOptions="FillAndExpand"
+                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                Text="Acessar"
+                TextColor="White"
+                FontAttributes="Bold"
+                VerticalOptions="EndAndExpand">
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

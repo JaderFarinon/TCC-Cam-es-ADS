@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="inst_global_saude.Views.busca_proc_grupo"
+             >
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,0">
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand">
+                <ImageButton Source="leftArrow"
+                         WidthRequest="32"
+                         HeightRequest="32"
+                         HorizontalOptions="StartAndExpand"
+                         x:Name="btn_voltar"
+                         BackgroundColor="Transparent"
+                         Margin="0,10,0,0">
+                </ImageButton>
+            </StackLayout>
+            
+            <Label  Text="Os procedimentos abaixo são compatíveis com os já existentes em sua guia!"
+                    TextColor="#414141"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Start"
+                    FontSize="Medium"
+                    FontAttributes="Bold"/>
+            <Label  x:Name="txtResult"
+                    VerticalOptions="Start"
+                    Margin="0,20,0,0"
+                    FontSize="Medium"
+                    TextColor="Black"/>
+            
+            <Label  x:Name="txtIndisp"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Margin="20,30,20,0"
+                    FontSize="Medium"
+                    TextColor="Black"/>
+            <ListView  
+                x:Name="listaProc" 
+                Margin="0,10,0,20"
+                SeparatorColor="Gray"
+                SeparatorVisibility="Default"
+                Opacity="1"
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <Label  Text="{Binding nomeProc}"
+                                        TextColor="Black"
+                                        FontSize="Medium"
+                                        Margin="0,10,0,0"
+                                        Grid.Row="1">
+                                </Label>
+                                <ActivityIndicator HeightRequest="10">
+                                </ActivityIndicator>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout
+                Orientation="Horizontal">
+                <!--<Button
+                    x:Name="btn_adic_proc"
+                    BackgroundColor="#0288D1"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Adicionar procedimento"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    VerticalOptions="EndAndExpand">
+                </Button>-->
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

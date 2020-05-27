@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="inst_global_saude.Views.resumo_proced">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,0">
+            <ImageButton Source="leftArrow"
+                         WidthRequest="32"
+                         HeightRequest="32"
+                         HorizontalOptions="Start"
+                         x:Name="btn_voltar"
+                         BackgroundColor="Transparent"
+                         Margin="0,10,0,0">
+            </ImageButton>
+            <Label  Text="Resumo do procedimento escolhido"
+                    TextColor="#414141"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Start"
+                    FontSize="Medium"
+                    FontAttributes="Bold"/>
+            <StackLayout Orientation="Horizontal"
+                         Margin="0,80,0,30"
+                         HorizontalOptions="CenterAndExpand"
+                         MinimumHeightRequest="40">
+                <Image Source="exames.png"
+                       HorizontalOptions="End">
+                </Image>
+                <Label  x:Name="nomeProc"
+                    Text="Consulta Oftalmológica Consulta Oftalmológica"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="Start"
+                    FontSize="Large"
+                    TextColor="Black"/>
+            </StackLayout>
+            <StackLayout x:Name="rowVlProc"
+                         Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand">
+                <Image Source="ico_money.png"
+                       Opacity="0.5">
+                </Image>
+                <Label x:Name="vlProc"
+                       Text="R$ 0,00"
+                       FontSize="Large"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand"
+                            Margin="0,20,0,0">
+                <StackLayout 
+                            Orientation="Horizontal"
+                            HorizontalOptions="CenterAndExpand">
+                    <Image Source="clinica.png">
+                    </Image>
+                    <Label x:Name="nomeParc"
+                            Text="MedCuritiba"
+                            FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout 
+                            Orientation="Horizontal"
+                            HorizontalOptions="CenterAndExpand"
+                            Margin="0,10,0,0">
+                    <Image Source="pin_mapa.png">
+                    </Image>
+                    <Label x:Name="enderecoParc"
+                            Text="Rua Rodrigues Alves, 508 - Paranaguá"
+                            FontSize="Medium"
+                           HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="CenterAndExpand"
+                             Margin="0,10,0,0"
+                             x:Name="rowContato">
+                    <Image Source="phone.png">
+                    </Image>
+                    <Label x:Name="contatoParc"
+                            Text="(41) 3423-2789 / (41) 3423-5564 / (41) 3423-5564"
+                            FontSize="Medium"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Vertical"
+                         VerticalOptions="StartAndExpand">
+                <Label x:Name="txtHorarioInd"
+                       HorizontalTextAlignment="Center"
+                        />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btn_adiciona_item"
+                        BackgroundColor="#0288D1"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Incluir procedimento"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        VerticalOptions="EndAndExpand">
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

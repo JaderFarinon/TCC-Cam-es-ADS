@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="inst_global_saude.Views.meus_cartoes">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,0">
+            <ImageButton Source="leftArrow"
+                         WidthRequest="32"
+                         HeightRequest="32"
+                         HorizontalOptions="Start"
+                         x:Name="btnVoltar"
+                         BackgroundColor="Transparent"
+                         Margin="0,10,0,0">
+            </ImageButton>
+            <Label  Text="Cartões Cadastrados"
+                    TextColor="#414141"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Start"
+                    FontSize="Large"
+                    FontAttributes="Bold"/>
+            <Label  x:Name="txtNocards"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Margin="20,50,20,0"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    IsVisible="False"/>
+            <ListView  
+                x:Name="listaCards" 
+                Margin="0,10,0,20"
+                SeparatorColor="Gray"
+                SeparatorVisibility="Default"
+                Opacity="1"
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <Label  Text="{Binding numero}"
+                                        TextColor="Black"
+                                        FontSize="Medium"
+                                        Margin="0,10,0,10">
+                                </Label>
+                                <Label  Text="{Binding bandeira}"
+                                                        TextColor="Gray"
+                                                        FontSize="Small"
+                                                        Margin="0,0,0,10">
+                                </Label>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label  Text="{Binding mesano}"
+                                            TextColor="Gray"
+                                            FontSize="Small"
+                                            Margin="0,0,0,5"
+                                            HorizontalTextAlignment="Start"
+                                            HorizontalOptions="StartAndExpand">
+                                    </Label>
+                                </StackLayout>
+                                <ActivityIndicator HeightRequest="10">
+                                </ActivityIndicator>
+                            </StackLayout>
+                            <!--</Grid>-->
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                <StackLayout
+                Orientation="Horizontal">
+                <ImageButton Source="Plus.png"
+                       WidthRequest="40"
+                       HorizontalOptions="EndAndExpand"
+                       Margin="0,0,1,10"
+                       x:Name="btnNewCard"
+                       BackgroundColor="Transparent"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

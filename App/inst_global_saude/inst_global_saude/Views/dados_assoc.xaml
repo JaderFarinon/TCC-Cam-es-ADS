@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="inst_global_saude.Views.dados_assoc">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="StartAndExpand">
+                <ImageButton Source="leftArrow.png"
+                             WidthRequest="32"
+                             HeightRequest="32"
+                             Margin="10,10,0,0"
+                             BackgroundColor="Transparent"
+                             HorizontalOptions="Start"
+                             x:Name="btnVoltar"/>
+            </StackLayout>
+            <Image Source="logoHor"
+                   WidthRequest="200"
+                   HorizontalOptions="Center"
+                   Margin="0,30,0,70"/>
+            <ImageButton x:Name="btn_cad"
+                         Source="btnMeusDados"
+                         Margin="0,5,0,0"
+                         />
+            <ImageButton x:Name="btn_card" 
+                         Source="btnCredCards"
+                         Margin="0,5,0,0"
+                         />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

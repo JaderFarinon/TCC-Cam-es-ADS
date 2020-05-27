@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="inst_global_saude.Views.cateirinha"
+             BackgroundImage="bgCart"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <ImageButton x:Name="btnCancel" 
+                         Source="leftArrow.png"
+                         WidthRequest="32"
+                         HeightRequest="32"
+                         HorizontalOptions="StartAndExpand"
+                         Margin="10,10,0,0"
+                         BackgroundColor="Transparent">
+            </ImageButton>
+            <Image Source="logoHor"
+                   WidthRequest="300"
+                   Margin="0,20,0,0"></Image>
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="lblusuNome"  
+                       Text="Usuário"
+                       FontSize="Large" 
+                       TextColor="White" 
+                       HorizontalOptions="End"
+                       HorizontalTextAlignment="End"
+                       Margin="0,50,20,0"/>
+                <Label x:Name="usuNome"  
+                       Text="usuNome"
+                       FontSize="Title" 
+                       TextColor="White" 
+                       HorizontalOptions="End"
+                       HorizontalTextAlignment="End"
+                       Margin="0,0,20,0"
+                       FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical"
+                         VerticalOptions="EndAndExpand"
+                         HorizontalOptions="Start"
+                         Margin="10,0,0,130">
+                <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                    <Label x:Name="lblUsuNasc"  
+                       Text="Data de Nasc.:" 
+                       FontSize="Large" 
+                       TextColor="White" 
+                       Margin="5,10,0,0"
+                       FontAttributes="Bold"/>
+                    <Label x:Name="usuNasc"  
+                       Text="usuNasc" 
+                       FontSize="Large" 
+                       TextColor="White" 
+                       Margin="10,10,0,0"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="lblUsuUnidade"  
+                       Text="Unidade:" 
+                       FontSize="Large" 
+                       TextColor="White" 
+                       Margin="5,10,0,0"
+                       FontAttributes="Bold"/>
+                    <Label x:Name="usuUnidade"  
+                       Text="usuUnidade" 
+                       FontSize="Large" 
+                       TextColor="White" 
+                       Margin="10,10,0,0"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="lblUsuEmail"  
+                       Text="Email:" 
+                       FontSize="Large" 
+                       TextColor="White" 
+                       Margin="5,10,0,0"
+                       FontAttributes="Bold"/>
+                    <Label x:Name="usuEmail"  
+                       Text="usuEmail" 
+                       FontSize="Large" 
+                       TextColor="White" 
+                       Margin="10,10,0,0"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="lblUsuCpf"  
+                       Text="CPF:" 
+                       FontSize="Large" 
+                       TextColor="White" 
+                       Margin="5,10,0,0"
+                       FontAttributes="Bold"/>
+                    <Label x:Name="usuCpf"  
+                       Text="usuCpf" 
+                       FontSize="Large" 
+                       TextColor="White" 
+                       Margin="10,10,0,0">
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

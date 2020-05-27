@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="inst_global_saude.Views.usuCad"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <ImageButton x:Name="btnCancel" 
+                         Source="leftArrow"
+                         WidthRequest="32"
+                         HeightRequest="32"
+                         HorizontalOptions="StartAndExpand"
+                         Margin="10,10,0,0"
+                         BackgroundColor="Transparent">
+                </ImageButton>
+                <Label  Text="Seja Bem Vindo!"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Start"
+                        FontSize="Title" 
+                        FontAttributes="Bold"
+                        x:Name="lblTitulo"/>
+                <Label  Text="Novo Usuário"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Start"
+                        FontSize="Subtitle"/>
+                <StackLayout Margin="10,30,10,0">
+                    <Entry  Keyboard="Numeric"
+                            IsPassword="false"
+                            Placeholder="C.P.F."
+                            PlaceholderColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            x:Name="entryCpf"
+                            FontSize="Medium">
+                        <Entry.Behaviors>
+                            <behaviorPack:MaskedBehavior Mask="XXX.XXX.XXX-XX" />
+                        </Entry.Behaviors>  
+                    </Entry>
+                    <Picker BackgroundColor="Transparent"
+                            Margin="0,10,0,0"
+                            TextColor="Black"
+                            HorizontalOptions="FillAndExpand"
+                            x:Name="pickerUnid"
+                            Title="Unidade Padrão"
+                            TitleColor="Black"
+                            FontSize="Medium"
+                            ItemDisplayBinding="{Binding dsUnidade}">
+                    </Picker>
+                    <Entry  Keyboard="Default"
+                            Placeholder="Nome Completo"
+                            PlaceholderColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            x:Name="entryName"
+                            Margin="0,10,0,0"
+                            FontSize="Medium">
+                    </Entry>
+                    <DatePicker
+                        BackgroundColor="Transparent"
+                        TextColor="Black"
+                        x:Name="pickerNasc"
+                        FontSize="Medium"
+                        Margin="0,10,0,0">
+                    </DatePicker>
+                    <Picker Title="Sexo"
+                            TitleColor="Black"
+                            FontSize="Medium"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            HorizontalOptions="FillAndExpand"
+                            x:Name="pickerSexo"
+                            Margin="0,10,0,0">
+                    </Picker>
+                    <Entry  Keyboard="Telephone"
+                            IsPassword="false"
+                            Placeholder="Celular"
+                            PlaceholderColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            x:Name="entryCel"
+                            Margin="0,10,0,0"
+                            FontSize="Medium">
+                        <Entry.Behaviors>
+                            <behaviorPack:MaskedBehavior Mask="(XX) XXXXX-XXXX" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Entry  Keyboard="Telephone"
+                            IsPassword="false"
+                            Placeholder="Telefone"
+                            PlaceholderColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            x:Name="entryTel"
+                            Margin="0,10,0,0"
+                            FontSize="Medium">
+                        <Entry.Behaviors>
+                            <behaviorPack:MaskedBehavior Mask="(XX) XXXX-XXXX" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Entry  Keyboard="Numeric"
+                            IsPassword="false"
+                            Placeholder="CEP"
+                            PlaceholderColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            x:Name="entryCep"
+                            Margin="0,10,0,0"
+                            FontSize="Medium">
+                        <Entry.Behaviors>
+                            <behaviorPack:MaskedBehavior Mask="XXXXX-XXX" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Entry  Keyboard="Default"
+                            IsPassword="false"
+                            Placeholder="Rua"
+                            PlaceholderColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            x:Name="entryRua"
+                            Margin="0,10,0,0"
+                            FontSize="Medium">
+                    </Entry>
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="0,10,0,0">
+                        <Entry  Keyboard="Numeric"
+                                IsPassword="false"
+                                Placeholder="Número"
+                                PlaceholderColor="Black"
+                                BackgroundColor="Transparent"
+                                TextColor="Black"
+                                x:Name="entryNum"
+                                WidthRequest="150"
+                                FontSize="Medium"/>
+                        <Entry  Keyboard="Default"
+                                IsPassword="false"
+                                Placeholder="Complemento"
+                                PlaceholderColor="Black"
+                                BackgroundColor="Transparent"
+                                TextColor="Black"
+                                x:Name="entryComp"
+                                HorizontalOptions="FillAndExpand"
+                                FontSize="Medium"/>
+                    </StackLayout>
+                    <Entry  Keyboard="Default"
+                            IsPassword="false"
+                            Placeholder="Bairro"
+                            PlaceholderColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            Margin="0,10,0,0"
+                            x:Name="entryBairro"
+                            FontSize="Medium">
+                    </Entry>
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="0,10,0,0">
+                        <Entry  Keyboard="Default"
+                                IsPassword="false"
+                                Placeholder="Cidade"
+                                PlaceholderColor="Black"
+                                BackgroundColor="Transparent"
+                                TextColor="Black"
+                                HorizontalOptions="FillAndExpand"
+                                x:Name="entryCid"
+                                FontSize="Medium">
+                        </Entry>
+                        <Entry  Keyboard="Default"
+                                IsPassword="false"
+                                Placeholder="Estado"
+                                PlaceholderColor="Black"
+                                BackgroundColor="Transparent"
+                                TextColor="Black"
+                                WidthRequest="100"
+                                x:Name="entryUF"
+                                FontSize="Medium">
+                        </Entry>
+                    </StackLayout>
+                    <Entry  Keyboard="Email"
+                            IsPassword="false"
+                            Placeholder="E-Mail"
+                            PlaceholderColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            Margin="0,10,0,0"
+                            x:Name="entryEmail"
+                            FontSize="Medium">
+                    </Entry>
+                    <Entry  Keyboard="Default"
+                            IsPassword="True"
+                            Placeholder="Senha"
+                            PlaceholderColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            Margin="0,10,0,0"
+                            x:Name="entryPass"
+                            FontSize="Medium">
+                    </Entry>
+                    <Entry  Keyboard="Default"
+                            IsPassword="True"
+                            Placeholder="Confirmação da Senha"
+                            PlaceholderColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            Margin="0,10,0,0"
+                            x:Name="entryPassVer"
+                            FontSize="Medium">
+                    </Entry>
+                </StackLayout>
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    VerticalOptions="FillAndExpand">
+                </ActivityIndicator>
+                <StackLayout VerticalOptions="End"
+                             Margin="0,0,0,0">
+                    <Button
+                        x:Name="btnCadastro"
+                        BackgroundColor="#1F1F8E"
+                        HeightRequest="60"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="End"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="Cadastrar"
+                        TextColor="White"
+                        Margin="-5,10,0,-5">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

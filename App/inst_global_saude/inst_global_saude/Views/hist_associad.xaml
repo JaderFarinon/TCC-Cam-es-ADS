@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="inst_global_saude.Views.hist_associad"
+             BackgroundImage="bg.png">
+    <ContentPage.Content>
+        <StackLayout Padding="10"
+                     Margin="10,20,10,10">
+            <Label  Text="Meus Agendamentos"
+                    TextColor="White"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Start"
+                    FontSize="30"
+                    FontAttributes="Bold"/>
+            <StackLayout
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
+                <Label
+                    HorizontalOptions="StartAndExpand"
+                    Text="Mostrar agendamentos passados"
+                    VerticalOptions="Center"
+                    FontSize="Medium"
+                    TextColor="White"
+                    FontAttributes="Bold">
+                </Label>
+                <Switch
+                    x:Name="sw_exibe_ag_passados"    
+                    IsToggled="{Binding IsRemembered, Mode=TwoWay}"
+                    HorizontalOptions="End">
+                </Switch>
+            </StackLayout>
+            <ListView x:Name="listAgendamentos"
+                          BackgroundColor="Black"
+                          Opacity="0.3">
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

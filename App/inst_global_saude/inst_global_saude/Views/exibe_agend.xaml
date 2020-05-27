@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="inst_global_saude.Views.exibe_agend">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,0">
+            <ImageButton Source="leftArrow"
+                         WidthRequest="32"
+                         HeightRequest="32"
+                         HorizontalOptions="Start"
+                         x:Name="btnVoltar"
+                         BackgroundColor="Transparent"
+                         Margin="0,10,0,0">
+            </ImageButton>
+            <Label  Text="Meus Agendamentos"
+                    TextColor="#414141"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Start"
+                    FontSize="Medium"
+                    FontAttributes="Bold"/>
+            <Label  x:Name="txtResult"
+                    VerticalOptions="Start"
+                    Margin="0,20,0,0"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    IsVisible="False"/>
+            <ListView  
+                x:Name="listAgend" 
+                Margin="0,10,0,20"
+                SeparatorColor="Gray"
+                SeparatorVisibility="Default"
+                Opacity="1"
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical"
+                                             HorizontalOptions="CenterAndExpand">
+                                    <Label  Text="{Binding parceiro}"
+                                        TextColor="Black"
+                                        FontSize="Medium"
+                                        Margin="0,10,0,0"
+                                        HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Start">
+                                    </Label>
+                                    <Label  Text="{Binding data}"
+                                        TextColor="Gray"
+                                        FontSize="Small"
+                                        Margin="0,5,0,2"
+                                        HorizontalOptions="Center"
+                                        HorizontalTextAlignment="Start">
+                                    </Label>
+                                    <ActivityIndicator HeightRequest="10">
+                                    </ActivityIndicator>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical"
+                                             HorizontalOptions="Center">
+                                    <Label  Text="{Binding valor}"
+                                        TextColor="Black"
+                                        FontSize="Medium"
+                                        Margin="0,10,0,0"
+                                        HorizontalTextAlignment="Center">
+                                    </Label>
+                                </StackLayout>
+                            </StackLayout>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout
+                Orientation="Horizontal">
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
