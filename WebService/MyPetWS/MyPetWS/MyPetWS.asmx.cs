@@ -16,7 +16,7 @@ namespace MyPetWS
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // Para permitir que esse serviço da web seja chamado a partir do script, usando ASP.NET AJAX, remova os comentários da linha a seguir. 
-    // [System.Web.Script.Services.ScriptService]
+    [System.Web.Script.Services.ScriptService]
     public class MyPetWS : System.Web.Services.WebService
     {
 
@@ -24,6 +24,19 @@ namespace MyPetWS
         public string HelloWorld()
         {
             return "Olá, Mundo";
+        }
+
+        [WebMethod]
+        public string TesteConexao()
+        {
+            Conexao conex = new Conexao();
+
+            if (conex.Conectar())
+            {
+                return "Conectado!";
+            }
+
+            return "Erro Conexão!";
         }
 
         [WebMethod]

@@ -12,7 +12,7 @@ namespace MyPetWS.DataAccess
     {
         internal DataTable Usuarios(Conexao conex)
         {
-            string strSql = "SELECT * FROM usuario";
+            string strSql = "SELECT * FROM mypet.dbo.usuario";
 
             try
             {

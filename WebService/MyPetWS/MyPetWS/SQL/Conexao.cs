@@ -17,7 +17,7 @@ namespace MyPetWS.SQL
 
         public Conexao()
         {
-            conn.ConnectionString = "Data Source=DESKTOP-9MV0DRM\\SQLSERVER;Initial Catalog=mypet;Integrated Security=True";
+            conn.ConnectionString = "Data Source=LOCALHOST\\SQLSERVER;Initial Catalog=mypet;Integrated Security=True";
         }
 
         public bool Conectar() 
