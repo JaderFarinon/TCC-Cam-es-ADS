@@ -49,7 +49,7 @@
 
                 <div class="panel panel-sign">
                     <div class="panel-title-sign mt-xl text-right">
-                        <h2 class="title text-uppercase text-weight-bold m-none"><i class="fa fa-user mr-xs"></i>Login</h2>
+                        <asp:Label class="title text-uppercase text-weight-bold m-none" ID="lblResult" runat="server"><i class="fa fa-user mr-xs"></i>Login</asp:Label>
                     </div>
                     <div class="panel-body">
 

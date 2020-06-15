@@ -14,7 +14,7 @@
     <RootNamespace>PainelMyPet</RootNamespace>
     <AssemblyName>PainelMyPet</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44385</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
@@ -1717,28 +1717,21 @@
     <Content Include="Assets\vendor\summernote\summernote.css" />
     <Content Include="Assets\vendor\summernote\summernote.js" />
     <Content Include="Assets\vendor\summernote\summernote.min.js" />
-    <None Include="Connected Services\MyPetWS\MyPetWS.disco" />
-    <None Include="Connected Services\MyPetWS\configuration91.svcinfo" />
-    <None Include="Connected Services\MyPetWS\configuration.svcinfo" />
-    <None Include="Connected Services\MyPetWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="Default.aspx" />
     <Content Include="View\Dashboard.aspx" />
     <Content Include="View\Login\Login.aspx" />
     <Content Include="View\Login\recoverPassword.aspx" />
     <Content Include="View\Menu.aspx" />
     <Content Include="View\Topo.aspx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MyPetWS\MyPetWS.disco" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\Criptografia.cs" />
-    <Compile Include="Connected Services\MyPetWS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1747,6 +1740,11 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="View\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1781,6 +1779,11 @@
     </Compile>
     <Compile Include="View\Topo.aspx.designer.cs">
       <DependentUpon>Topo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MyPetWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2138,9 +2141,13 @@
     <Content Include="Assets\vendor\summernote\font\summernote.eot" />
     <Content Include="Assets\vendor\summernote\font\summernote.ttf" />
     <Content Include="Assets\vendor\summernote\font\summernote.woff" />
-    <None Include="Connected Services\MyPetWS\MyPetWS.wsdl" />
     <None Include="packages.config" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Web References\MyPetWS\MyPetWS.wsdl" />
+    <None Include="Web References\MyPetWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2152,7 +2159,20 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\MyPetWS\" />
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/MyPetWS/MyPetWS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MyPetWS\</RelPath>
+      <UpdateFromURL>http://localhost/MyPetWS/MyPetWS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PainelMyPet_MyPetWS_MyPetWS</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -2169,7 +2189,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53599</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44385/</IISUrl>
+          <IISUrl>http://localhost/PainelMyPet</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

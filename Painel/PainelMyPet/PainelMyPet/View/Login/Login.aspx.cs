@@ -15,7 +15,21 @@ namespace PainelMyPet.View.Login
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Dashboard.aspx");
+            MyPetWS.MyPetWS ws = new MyPetWS.MyPetWS();
+
+            if (ws.Login(txtUsername.Text,txtPassword.Text) == "true")
+            {
+                //Response.Redirect("~/View/Dashboard.aspx");
+                lblResult.Text = "<i class=\"fa fa-user mr - xs\"></i>Válido";
+            }
+            else 
+            {
+                lblResult.Text = "<i class=\"fa fa-user mr - xs\"></i>Inválido";
+                //Response.Redirect("~/View/Dashboard.aspx");
+            }
+            
+            //ws.TesteConexao
+            //Response.Redirect("~/View/Dashboard.aspx");
         }
     }
 }

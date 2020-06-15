@@ -16,5 +16,10 @@ namespace MyPetWS.BusinessLogic
             return myPetSql.Usuarios(conex);
         }
 
+        internal string Login(Conexao conex, string login, string senha)
+        {
+            MyPetSQL myPetSql = new MyPetSQL();
+            return myPetSql.Login(conex, login, senha);
+        }
     }
 }

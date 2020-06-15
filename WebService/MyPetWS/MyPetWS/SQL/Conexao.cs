@@ -17,7 +17,7 @@ namespace MyPetWS.SQL
 
         public Conexao()
         {
-            conn.ConnectionString = "Data Source=LOCALHOST\\SQLSERVER;Initial Catalog=mypet;Integrated Security=True";
+            conn.ConnectionString = "Data Source=LOCALHOST\\SQLSERVER;Initial Catalog=mypet; Uid=mypet; Pwd=mypet;";
         }
 
         public bool Conectar() 
@@ -27,7 +27,7 @@ namespace MyPetWS.SQL
                 conn.Open();
                 Conectado = true;
             }
-            catch 
+            catch (Exception E)
             {
                 Conectado = false;
             }

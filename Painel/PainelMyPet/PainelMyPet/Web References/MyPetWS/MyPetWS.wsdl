@@ -39,6 +39,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -59,6 +74,12 @@
   <wsdl:message name="ListarUsuariosSoapOut">
     <wsdl:part name="parameters" element="tns:ListarUsuariosResponse" />
   </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
   <wsdl:portType name="MyPetWSSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -71,6 +92,10 @@
     <wsdl:operation name="ListarUsuarios">
       <wsdl:input message="tns:ListarUsuariosSoapIn" />
       <wsdl:output message="tns:ListarUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="MyPetWSSoap" type="tns:MyPetWSSoap">
@@ -95,6 +120,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListarUsuarios">
       <soap:operation soapAction="http://tempuri.org/ListarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -132,13 +166,22 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="MyPetWS">
     <wsdl:port name="MyPetWSSoap" binding="tns:MyPetWSSoap">
-      <soap:address location="http://localhost/ws/MyPetWS.asmx" />
+      <soap:address location="http://localhost/MyPetWS/MyPetWS.asmx" />
     </wsdl:port>
     <wsdl:port name="MyPetWSSoap12" binding="tns:MyPetWSSoap12">
-      <soap12:address location="http://localhost/ws/MyPetWS.asmx" />
+      <soap12:address location="http://localhost/MyPetWS/MyPetWS.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

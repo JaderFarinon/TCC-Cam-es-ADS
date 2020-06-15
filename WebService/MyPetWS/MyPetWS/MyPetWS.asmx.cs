@@ -3,6 +3,7 @@ using MyPetWS.SQL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -48,6 +49,20 @@ namespace MyPetWS
             {
                 MyPetBl myPetBl = new MyPetBl();
                 return (myPetBl.Usuario(conex));
+            }
+
+            return null;
+        }
+
+        [WebMethod]
+        public string Login(string login, string senha)
+        {
+            Conexao conex = new Conexao();
+
+            if (conex.Conectar())
+            {
+                MyPetBl myPetBl = new MyPetBl();
+                return (myPetBl.Login(conex, login, senha));
             }
 
             return null;
