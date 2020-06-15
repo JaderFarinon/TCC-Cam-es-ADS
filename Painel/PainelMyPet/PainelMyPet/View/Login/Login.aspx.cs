@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace PainelMyPet.View.Login
 {
@@ -17,17 +12,17 @@ namespace PainelMyPet.View.Login
         {
             MyPetWS.MyPetWS ws = new MyPetWS.MyPetWS();
 
-            if (ws.Login(txtUsername.Text,txtPassword.Text) == "true")
+            if (ws.Login(txtUsername.Text, txtPassword.Text) == "true")
             {
                 //Response.Redirect("~/View/Dashboard.aspx");
-                lblResult.Text = "<i class=\"fa fa-user mr - xs\"></i>Válido";
+                lblResult.Text = "<i class=\"fa fa-user mr - xs\"></i> Válido";
             }
-            else 
+            else
             {
-                lblResult.Text = "<i class=\"fa fa-user mr - xs\"></i>Inválido";
+                lblResult.Text = "<i class=\"fa fa-user mr - xs\"></i> Inválido";
                 //Response.Redirect("~/View/Dashboard.aspx");
             }
-            
+
             //ws.TesteConexao
             //Response.Redirect("~/View/Dashboard.aspx");
         }
