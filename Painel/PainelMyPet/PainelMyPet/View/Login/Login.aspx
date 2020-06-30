@@ -9,10 +9,6 @@
     <!-- Basic -->
     <meta charset="UTF-8"/>
 
-    <meta name="keywords" content="" />
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
-
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
@@ -44,7 +40,7 @@
         <section class="body-sign">
             <div class="center-sign">
                 <a href="/" class="logo pull-left">
-                    <img src="../../Assets/images/logo.png" height="54" alt="My Pet" />
+                    <img src="../../Assets/images/logo.png" height="54" alt="MyPet" />
                 </a>
 
                 <div class="panel panel-sign">
@@ -68,7 +64,7 @@
                         <div class="form-group mb-lg">
                             <div class="clearfix">
                                 <label class="pull-left">Senha</label>
-                                <a href="recoverPassword.aspx" class="pull-right">Esqueceu a Senha?</a>
+                                <a href="PassRecovery.aspx" class="pull-right">Esqueceu a Senha?</a>
                             </div>
                             <div class="input-group input-group-icon">
                                 <asp:TextBox ID="txtPassword" runat="server" type="password" CssClass="form-control input-lg"></asp:TextBox>
@@ -85,7 +81,7 @@
                                 <%-- // --%>
                             </div>
                             <div class="col-sm-4 text-right">
-                                <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-primary hidden-xs" Text="Sign In" OnClick="btnLogin_Click" />
+                                <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-primary hidden-xs" Text="Acessar" OnClick="btnLogin_Click" />
                                 <button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign In</button>
                             </div>
                         </div>

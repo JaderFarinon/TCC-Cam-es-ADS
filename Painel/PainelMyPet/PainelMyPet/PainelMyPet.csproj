@@ -1720,14 +1720,16 @@
     <Content Include="Default.aspx" />
     <Content Include="View\Dashboard.aspx" />
     <Content Include="View\Login\Login.aspx" />
-    <Content Include="View\Login\recoverPassword.aspx" />
-    <Content Include="View\Menu.aspx" />
-    <Content Include="View\Topo.aspx" />
+    <Content Include="View\Login\PassRecovery.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Web References\MyPetWS\MyPetWS.disco" />
+    <Content Include="View\Perfil.aspx" />
+    <Content Include="View\Produtos.aspx" />
+    <Content Include="View\Promocoes.aspx" />
+    <Content Include="View\Servicos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1752,6 +1754,7 @@
     <Compile Include="View\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\FixedContent.cs" />
     <Compile Include="View\Login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1759,26 +1762,40 @@
     <Compile Include="View\Login\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Login\recoverPassword.aspx.cs">
-      <DependentUpon>recoverPassword.aspx</DependentUpon>
+    <Compile Include="View\Login\PassRecovery.aspx.cs">
+      <DependentUpon>PassRecovery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Login\recoverPassword.aspx.designer.cs">
-      <DependentUpon>recoverPassword.aspx</DependentUpon>
+    <Compile Include="View\Login\PassRecovery.aspx.designer.cs">
+      <DependentUpon>PassRecovery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Menu.aspx.cs">
-      <DependentUpon>Menu.aspx</DependentUpon>
+    <Compile Include="View\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Menu.aspx.designer.cs">
-      <DependentUpon>Menu.aspx</DependentUpon>
+    <Compile Include="View\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Topo.aspx.cs">
-      <DependentUpon>Topo.aspx</DependentUpon>
+    <Compile Include="View\Produtos.aspx.cs">
+      <DependentUpon>Produtos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Topo.aspx.designer.cs">
-      <DependentUpon>Topo.aspx</DependentUpon>
+    <Compile Include="View\Produtos.aspx.designer.cs">
+      <DependentUpon>Produtos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Promocoes.aspx.cs">
+      <DependentUpon>Promocoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Promocoes.aspx.designer.cs">
+      <DependentUpon>Promocoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Servicos.aspx.cs">
+      <DependentUpon>Servicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Servicos.aspx.designer.cs">
+      <DependentUpon>Servicos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\MyPetWS\Reference.cs">
       <AutoGen>True</AutoGen>

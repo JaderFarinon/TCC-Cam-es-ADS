@@ -6,7 +6,9 @@ namespace PainelMyPet.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            FixedContent content = new FixedContent();
+            topo.Text = content.topoHtml;
+            menuEsq.Text = content.menuHtml;
         }
     }
 }

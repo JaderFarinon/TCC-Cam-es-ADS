@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MyPet.View.AddCard"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack">
+    <ContentPage.Content>
+        <StackLayout>
+            <ImageButton x:Name="btnCancel" 
+                         Source="cancel"
+                         WidthRequest="32"
+                         HeightRequest="32"
+                         HorizontalOptions="End"
+                         Margin="0,10,10,0"
+                         BackgroundColor="Transparent">
+            </ImageButton>
+            <Label  Text="Dados do Novo Cartão"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Start"
+                        FontSize="20"/>
+            <Image Source="Card.png"
+                   HeightRequest="120"
+                   Margin="0,50,0,30"/>
+            <StackLayout Margin="10,30,10,0">
+                <Entry  Keyboard="Numeric"
+                            IsPassword="false"
+                            Placeholder="Número do Cartão"
+                            PlaceholderColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            x:Name="entryNum">
+                    <Entry.Behaviors>
+                        <behaviorPack:MaskedBehavior Mask="XXXX XXXX XXXX XXXX" />
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry  Keyboard="Default"
+                            Placeholder="Nome Impresso no Cartão"
+                            PlaceholderColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            x:Name="entryName"
+                            Margin="0,10,0,0">
+                </Entry>
+                <StackLayout Orientation="Horizontal"
+                                 Margin="0,10,0,0">
+                    <Entry  Keyboard="Numeric"
+                                IsPassword="false"
+                                Placeholder="Validade (mm/aaaa)"
+                                PlaceholderColor="Black"
+                                BackgroundColor="Transparent"
+                                TextColor="Black"
+                                x:Name="entryVal"
+                                WidthRequest="180">
+                        <Entry.Behaviors>
+                            <behaviorPack:MaskedBehavior Mask="XX/XXXX" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Picker Title="Bandeira"
+                            TitleColor="Black"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            HorizontalOptions="FillAndExpand"
+                            x:Name="pickerBandeira"
+                            Margin="0,10,0,0">
+                    </Picker>
+                </StackLayout>
+            </StackLayout>
+            <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    VerticalOptions="FillAndExpand">
+            </ActivityIndicator>
+            <StackLayout VerticalOptions="End"
+                             Margin="0,0,0,0">
+                <Button
+                        x:Name="btnSalvarCartao"
+                        BackgroundColor="#1F1F8E"
+                        HeightRequest="60"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="End"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="Salvar Cartão"
+                        TextColor="White"
+                        Margin="-5,10,0,-5">
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

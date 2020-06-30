@@ -67,5 +67,61 @@ namespace MyPetWS
 
             return null;
         }
+
+        [WebMethod]
+        public DataTable DadosUsuario(string login, string senha)
+        {
+            Conexao conex = new Conexao();
+
+            if (conex.Conectar())
+            {
+                MyPetBl myPetBl = new MyPetBl();
+                return (myPetBl.DadosUsuario(conex, login, senha));
+            }
+
+            return null;
+        }
+
+        [WebMethod]
+        public DataTable ListarProdutos(int idUsuario)
+        {
+            Conexao conex = new Conexao();
+
+            if (conex.Conectar())
+            {
+                MyPetBl myPetBl = new MyPetBl();
+                return (myPetBl.ListarProdutos(conex, idUsuario));
+            }
+
+            return null;
+        }
+
+        [WebMethod]
+        public DataTable GravarProduto(string nome, int tipo, decimal valor, string ie_entrega, int id_usuario)
+        {
+            Conexao conex = new Conexao();
+
+            if (conex.Conectar())
+            {
+                MyPetBl myPetBl = new MyPetBl();
+                return (myPetBl.GravarProduto(conex, nome, tipo, valor, ie_entrega, id_usuario));
+            }
+
+            return null;
+        }
+
+        [WebMethod]
+        public DataTable ListarProdServ()
+        {
+            Conexao conex = new Conexao();
+
+            if (conex.Conectar())
+            {
+                MyPetBl myPetBl = new MyPetBl();
+                return (myPetBl.ListarProdServ(conex));
+            }
+
+            return null;
+        }
     }
 }

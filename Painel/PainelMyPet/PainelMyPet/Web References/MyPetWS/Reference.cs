@@ -38,6 +38,12 @@ namespace PainelMyPet.MyPetWS {
         
         private System.Threading.SendOrPostCallback LoginOperationCompleted;
         
+        private System.Threading.SendOrPostCallback DadosUsuarioOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ListarProdutosOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GravarProdutoOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -87,6 +93,15 @@ namespace PainelMyPet.MyPetWS {
         
         /// <remarks/>
         public event LoginCompletedEventHandler LoginCompleted;
+        
+        /// <remarks/>
+        public event DadosUsuarioCompletedEventHandler DadosUsuarioCompleted;
+        
+        /// <remarks/>
+        public event ListarProdutosCompletedEventHandler ListarProdutosCompleted;
+        
+        /// <remarks/>
+        public event GravarProdutoCompletedEventHandler GravarProdutoCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -197,6 +212,103 @@ namespace PainelMyPet.MyPetWS {
             if ((this.LoginCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.LoginCompleted(this, new LoginCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DadosUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable DadosUsuario(string login, string senha) {
+            object[] results = this.Invoke("DadosUsuario", new object[] {
+                        login,
+                        senha});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void DadosUsuarioAsync(string login, string senha) {
+            this.DadosUsuarioAsync(login, senha, null);
+        }
+        
+        /// <remarks/>
+        public void DadosUsuarioAsync(string login, string senha, object userState) {
+            if ((this.DadosUsuarioOperationCompleted == null)) {
+                this.DadosUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDadosUsuarioOperationCompleted);
+            }
+            this.InvokeAsync("DadosUsuario", new object[] {
+                        login,
+                        senha}, this.DadosUsuarioOperationCompleted, userState);
+        }
+        
+        private void OnDadosUsuarioOperationCompleted(object arg) {
+            if ((this.DadosUsuarioCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DadosUsuarioCompleted(this, new DadosUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListarProdutos", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable ListarProdutos(int idUsuario) {
+            object[] results = this.Invoke("ListarProdutos", new object[] {
+                        idUsuario});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ListarProdutosAsync(int idUsuario) {
+            this.ListarProdutosAsync(idUsuario, null);
+        }
+        
+        /// <remarks/>
+        public void ListarProdutosAsync(int idUsuario, object userState) {
+            if ((this.ListarProdutosOperationCompleted == null)) {
+                this.ListarProdutosOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListarProdutosOperationCompleted);
+            }
+            this.InvokeAsync("ListarProdutos", new object[] {
+                        idUsuario}, this.ListarProdutosOperationCompleted, userState);
+        }
+        
+        private void OnListarProdutosOperationCompleted(object arg) {
+            if ((this.ListarProdutosCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ListarProdutosCompleted(this, new ListarProdutosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GravarProduto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GravarProduto(string nome, int tipo, decimal valor, string ie_entrega, int id_usuario) {
+            object[] results = this.Invoke("GravarProduto", new object[] {
+                        nome,
+                        tipo,
+                        valor,
+                        ie_entrega,
+                        id_usuario});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GravarProdutoAsync(string nome, int tipo, decimal valor, string ie_entrega, int id_usuario) {
+            this.GravarProdutoAsync(nome, tipo, valor, ie_entrega, id_usuario, null);
+        }
+        
+        /// <remarks/>
+        public void GravarProdutoAsync(string nome, int tipo, decimal valor, string ie_entrega, int id_usuario, object userState) {
+            if ((this.GravarProdutoOperationCompleted == null)) {
+                this.GravarProdutoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGravarProdutoOperationCompleted);
+            }
+            this.InvokeAsync("GravarProduto", new object[] {
+                        nome,
+                        tipo,
+                        valor,
+                        ie_entrega,
+                        id_usuario}, this.GravarProdutoOperationCompleted, userState);
+        }
+        
+        private void OnGravarProdutoOperationCompleted(object arg) {
+            if ((this.GravarProdutoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GravarProdutoCompleted(this, new GravarProdutoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -319,6 +431,84 @@ namespace PainelMyPet.MyPetWS {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void DadosUsuarioCompletedEventHandler(object sender, DadosUsuarioCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DadosUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DadosUsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void ListarProdutosCompletedEventHandler(object sender, ListarProdutosCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ListarProdutosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ListarProdutosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GravarProdutoCompletedEventHandler(object sender, GravarProdutoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GravarProdutoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GravarProdutoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
             }
         }
     }
